@@ -5,6 +5,7 @@ style = open(sys.argv[1] + '/style.css').read()
 def get_word_rows():
     for line in sys.stdin:
         path, word, count = line.split('\t')
+        word = word.replace(" ", "_")
         count = int(count)
         yield path,word,count
 
